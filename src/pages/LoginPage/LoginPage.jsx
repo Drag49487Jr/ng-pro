@@ -6,6 +6,7 @@ class LoginPage extends Component {
         this.state={
             password: 'NGPRO',
             user_Password:'',
+            message:''
         }
         console.log(this.state.password)
     }
@@ -18,26 +19,17 @@ class LoginPage extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-            // try { 
-            //     this.props.history.push('/home')
-            // } catch {
-            //     alert('credentials accepted')
-            // }
-            // await userService.login(this.state);
-            //this.props.handleLogin();
-        // catch (err) {
-        //     alert('Invalid Login')
-        // }
         if (this.state.user_Password === this.state.password) {
             try {
                 this.props.history.push('/home')
-            } catch (err){
+            } catch (err) {
                 alert('credentials accepted')
             }
         } else {
-            alert('Wrong Credentials')
+            this.setState({message: 'NotAccpeted'})
         }
     }
+
 
     render(){
         return(
@@ -47,6 +39,7 @@ class LoginPage extends Component {
                     <input type='password' placeholder='password' 
                     name='user_Password' onChange={this.handleChange} />
                     <button>Login</button>
+                    <div>{this.state.message}</div>
                 </form>
             </div>
         )

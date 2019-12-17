@@ -4,8 +4,10 @@ class LoginPage extends Component {
     constructor() {
         super();
         this.state={
-            password: '',
+            password: 'NGPRO',
+            user_Password:'',
         }
+        console.log(this.state.password)
     }
 
     handleChange = (e) => {
@@ -16,12 +18,24 @@ class LoginPage extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        try {
+            // try { 
+            //     this.props.history.push('/home')
+            // } catch {
+            //     alert('credentials accepted')
+            // }
             // await userService.login(this.state);
             //this.props.handleLogin();
-            this.props.history.push('/home')
-        } catch (err) {
-            alert('Invalid Login')
+        // catch (err) {
+        //     alert('Invalid Login')
+        // }
+        if (this.state.user_Password === this.state.password) {
+            try {
+                this.props.history.push('/home')
+            } catch (err){
+                alert('credentials accepted')
+            }
+        } else {
+            alert('Wrong Credentials')
         }
     }
 
@@ -30,8 +44,8 @@ class LoginPage extends Component {
             <div className="login-box">
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='password' placeholder='password' value={this.state.password} 
-                    name='password' onChange={this.handleChange} />
+                    <input type='password' placeholder='password' 
+                    name='user_Password' onChange={this.handleChange} />
                     <button>Login</button>
                 </form>
             </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
+import EventsPage from '../EventsPage/EventsPage';
+import LeadersPage from '../LeadersPage/LeadersPage';
 import './App.css';
 
 function App() {
@@ -16,6 +18,12 @@ function App() {
         }/>
         <Route path='/home' render={() => 
           <HomePage />
+        }/>
+        <Route path='/events' render={() =>
+          <EventsPage />
+        }/>
+        <Route path='/leaders' render={() =>
+          <LeadersPage />
         }/>
       </Switch>
     </div>

@@ -1,16 +1,13 @@
 import React , {Component} from 'react';
-import {Link} from 'react-router-dom';
 import HomePageComponent from '../../components/HomePageComponent/HomePageComponent'
-import EventsPageComponent from '../../components/EventsPageComponent/EventsPageComponent';
-import LeadersComponent from '../../components/LeadersComponent/LeadersComponent';
+import NavBar from '../../components/NavBar/NavBar';
 
 class HomePage extends Component {
     render() {
         return(
             <div>
+                <NavBar />
                 <HomePageComponent />
-                <Link to='/events'><EventsPageComponent/></Link>
-                <Link to='/leaders'><LeadersComponent/></Link>
             </div>
         )
     }

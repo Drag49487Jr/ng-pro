@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './HomePageComponent.css';
 
 class HomePageComponent extends Component {
     render() {
@@ -6,6 +7,6 @@ class HomePageComponent extends Component {
             <div>Home Page</div>
         )
     }
-}
+};
 
 export default HomePageComponent;

@@ -26,7 +26,7 @@ class LoginPage extends Component {
                 alert('credentials accepted')
             }
         } else {
-            this.setState({message: 'NotAccpeted'})
+            this.setState({message: 'Not Accepted'})
         }
     }
 
